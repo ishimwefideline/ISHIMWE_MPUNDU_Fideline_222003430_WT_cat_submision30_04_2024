@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lounge Management</title>
+    <style>
+        body {
+            background-color: lightskyblue; /* Background color */
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            background-color: #fff; /* Background color for table data */
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            width: calc(100% - 18px); /* Adjust width to fit within table cell */
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Added margin for spacing */
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Update Lounge Form</h2>
+    <form action="update_lounge.php" method="post" id="updateForm">
+        <table>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="lounge_id">Lounge ID:</label>
+                        <input type="text" id="lounge_id" name="lounge_id" required>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="lng_fname_update">First Name:</label>
+                        <input type="text" id="lng_fname_update" name="lng_fname" required>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="lng_lname_update">Last Name:</label>
+                        <input type="text" id="lng_lname_update" name="lng_lname" required>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="lng_country_update">Country:</label>
+                        <input type="text" id="lng_country_update" name="lng_country" required>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Update">
+        <input type="reset" value="Clear"> <!-- Add clear button -->
+    </form>
+</div>
+
+<div class="container">
+    <h2>Delete Lounge</h2>
+    <form action="delete_lounge.php" method="post" id="deleteForm">
+        <table>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="lounge_id_delete">Lounge ID:</label>
+                        <input type="text" id="lounge_id_delete" name="lounge_id_delete" required>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Delete">
+        <input type="reset" value="Clear"> <!-- Add clear button -->
+    </form>
+</div>
+
+</body>
+</html>

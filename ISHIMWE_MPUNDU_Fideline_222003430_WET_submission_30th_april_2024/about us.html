@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - About Us</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('./library_background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Header styling */
+        .header {
+            display: flex;
+            margin: 20px;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: grey;
+            border-bottom: 5px solid black;
+        }
+        .logo {
+            width: 60px;
+            height: auto;
+        }
+        .header h3 {
+            color: white;
+        }
+        .navigation {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navigation li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .navigation li a {
+            text-decoration: none;
+            color: white;
+            background-color: none;
+            padding: 8px 15px;
+            border-radius: 3px;
+        }
+        .navigation li a:hover {
+            background-color: deeppink;
+        }
+
+        /* Main content styling */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Adding opacity to background */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container h1 {
+            color: darkolivegreen;
+        }
+        .container p {
+            color: #333;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: teal;
+            text-align: center;
+            width: 100%;
+            height: 70px;
+            color: white;
+            font-size: 25px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* Dropdown styles */
+        .dropdown-contents {
+            display: none;
+            position: absolute;
+            background-color: deeppink;
+            text-decoration: none;
+            min-width: 120px;
+            z-index: 1;
+        }
+        .dropdown-contents a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+        }
+        .dropdown-contents a:hover {
+            background-color: red;
+        }
+        .dropdown:hover .dropdown-contents {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <img class="logo" src="logo.jpg" alt="Logo">
+    <h3>LIBRARY <br>MANAGEMENT SYSTEM</h3>
+    <ul class="navigation">
+        <li><a href="home page.html">Home</a></li>
+        <li><a href="about us.html">About Us</a></li>
+        <li><a href="contact us.html">Contact Us</a></li>
+        <li class="dropdown">
+            <a href="#">Forms</a>
+            <div class="dropdown-contents">
+                <a href="admin.php">Admin</a>
+                <a href="authors.php">Authors</a>
+                <a href="books.php">Books</a>
+                <a href="borrowings.php">Borrowings</a>
+                <a href="publishers.php">Publishers</a>
+                <a href="registrations.php">Registrations</a>
+                <a href="users.php">Users</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="#">Tables</a>
+            <div class="dropdown-contents">
+                <a href="admin.php">Admin</a>
+                <a href="authors.php">Authors</a>
+                <a href="books.php">Books</a>
+                <a href="borrowings.php">Borrowings</a>
+                <a href="publishers.php">Publishers</a>
+                <a href="registrations.php">Registrations</a>
+                <a href="users.php">Users</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="#">Settings</a>
+            <div class="dropdown-contents">
+                <a href="login.php">Login</a>
+                <a href="registration.php">Registration</a>
+                <a href="logout.php">Logout</a>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="container">
+    <h1>About Us</h1>
+    <div>
+        <p>Welcome to our Library Management System!</p>
+        <p>We are dedicated to providing an efficient and reliable solution for managing library resources and services.</p>
+        <p>Our system helps libraries streamline their operations, enhance user experience, and optimize resource management.</p>
+        <p>With our user-friendly interface and comprehensive features, managing a library has never been easier.</p>
+        <p>Our team is committed to continuous improvement and customer satisfaction. We strive to meet the unique needs of each library we serve.</p>
+        <p>Thank you for choosing our Library Management System. We look forward to helping you enhance your library services.</p>
+    </div>
+    <h2>Our Mission</h2>
+    <p>Our mission is to empower libraries with innovative technology solutions that simplify operations, improve accessibility, and enrich user experience.</p>
+  
+    <h2>Our Team</h2>
+    <div>
+        <p>Meet the faces behind our company:</p>
+        <ul>
+            <li><strong>Aimee Diane Kubwimana</strong> - CEO</li>
+            <li><strong>Diane Uwamariya</strong> - Marketing Director</li>
+            <li><strong>Mugabo Jean Berthra</strong> - Head of Operations</li>
+            <!-- Add more team members as needed -->
+        </ul>
+    </div>
+    
+    <h2>Our History</h2>
+    <p>Our company was founded in August 2022 with a vision to revolutionize library management. Since then, we have been committed to innovation and excellence.</p>
+    
+    <h2>Our Milestones</h2>
+    <div>
+        <p>Over the years, we've achieved several milestones:</p>
+        <ul>
+            <li><strong>August 2022</strong> - Founded the company with a small team of passionate individuals.</li>
+            <li><strong>December 2022</strong> - Launched our first version of the Library Management System.</li>
+            <li><strong>September 2023</strong> - Expanded our services and introduced new features based on user feedback.</li>
+            <!-- Add more milestones as needed -->
+        </ul>
+    </div>
+</div>
+<footer>
+    <p>Designed by Aimee Diane Kubwimana_222002776 &copy; Year Two BIT Group A &reg; 2024</p>
+</footer>
+</body>
+</html>

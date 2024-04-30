@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - About Us</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('./library_background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Header styling */
+        .header {
+            display: flex;
+            margin: 20px;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: grey;
+            border-bottom: 5px solid black;
+        }
+        .logo {
+            width: 60px;
+            height: auto;
+        }
+        .header h3 {
+            color: white;
+        }
+        .navigation {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navigation li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .navigation li a {
+            text-decoration: none;
+            color: white;
+            background-color: none;
+            padding: 8px 15px;
+            border-radius: 3px;
+        }
+        .navigation li a:hover {
+            background-color: deeppink;
+        }
+
+        /* Main content styling */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Adding opacity to background */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container h1 {
+            color: darkolivegreen;
+        }
+        .container p {
+            color: #333;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: teal;
+            text-align: center;
+            width: 100%;
+            height: 70px;
+            color: white;
+            font-size: 25px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* Dropdown styles */
+        .dropdown-contents {
+            display: none;
+            position: absolute;
+            background-color: deeppink;
+            text-decoration: none;
+            min-width: 120px;
+            z-index: 1;
+        }
+        .dropdown-contents a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+        }
+        .dropdown-contents a:hover {
+            background-color: red;
+        }
+        .dropdown:hover .dropdown-contents {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <img class="logo" src="logo.jpg" alt="Logo">
+    <h3>LIBRARY <br>MANAGEMENT SYSTEM</h3>
+    <ul class="navigation">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li class="dropdown">
+            <a href="#">Forms</a>
+            <div class="dropdown-contents">
+                <a href="admin.php">Admin</a>
+                <a href="authors.php">Authors</a>
+                <a href="books.php">Books</a>
+                <a href="borrowings.php">Borrowings</a>
+                <a href="publishers.php">Publishers</a>
+                <a href="registrations.php">Registrations</a>
+                <a href="users.php">Users</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="#">Tables</a>
+            <div class="dropdown-contents">
+                <a href="admin.php">Admin</a>
+                <a href="authors.php">Authors</a>
+                <a href="books.php">Books</a>
+                <a href="borrowings.php">Borrowings</a>
+                <a href="publishers.php">Publishers</a>
+                <a href="registrations.php">Registrations</a>
+                <a href="users.php">Users</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="#">Settings</a>
+            <div class="dropdown-contents">
+                <a href="login.php">Login</a>
+                <a href="registration.php">Registration</a>
+                <a href="logout.php">Logout</a>
+            </div>
+        </li>
+    </ul>
+</div>
+<center>
+  <p style="font-weight: bold;font-size: 25px;align-items: center;color: blue;"><i>LIBRARY MANAGEMENT SYSTEM</i></p>
+    <form action="" method="POST" onsubmit="return confirmInsert();">
+    <p style="font-size: 25px;color: white; font-weight: bold;">Adimn Form</p>
+        <table>
+            <tr>
+                <td>id</td>
+                <td><input type="number" name="id" required></td>
+            </tr>
+            <tr>
+                <td>username</td>
+                <td><input type="text" name="username" required></td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td><input type="password" name="password" required></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="send" value="Attend" style="width: 150px; background-color: indigo; color: white; font-size: 30px;">
+                    <input type="submit" name="send" value="Cancel" style="width: 150px; background-color: blue; color: white; font-size: 30px;">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <?php
+<?php
+include('dbconnection.php'); // Assuming dbconnection.php contains code to establish database connection
+
+if (isset($_POST['send'])) {
+    // Retrieve values from form
+    $id = $_POST['id'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    
+    // Insert new record into the database
+    $stmt = $connection->prepare("INSERT INTO Adimn (id, username, password) VALUES (?, ?, ?)");
+
+    // Check if the statement was prepared successfully
+    if ($stmt) {
+        $stmt->bind_param("is", $id, $username, $password); // Bind parameters
+
+        if ($stmt->execute()) {
+            // Redirect to Adimn.php after successful insertion
+            header('Location: Adimn.php');
+            exit(); // Ensure that no other content is sent after the header redirection
+        } else {
+            echo "Error inserting record: " . $stmt->error;
+        }
+    } else {
+        echo "Error preparing statement: " . $connection->error;
+    }
+}
+?>
+
+
+</center>
+
+<footer style="background-color: teal; text-align: center; width: 100%; height: 90px; color: white; font-size: 25px; margin-top: 20px; bottom: 0; left: 0;">
+    <p>Designed by fideline mpundu ishimwe_222003430 &copy; YEAR TWO BIT GROUP A &reg; 2024</p>
+</footer>
+</body>
+</html>
